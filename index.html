@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Lorem Şablon - Basit HTML & CSS</title>
+    <style>
+      :root {
+        --bg: #f6f7fb;
+        --card: #ffffff;
+        --muted: #6b7280;
+        --accent: #2563eb;
+        --radius: 12px;
+        --max-width: 1100px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+        background: var(--bg);
+        color: #111827;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        line-height: 1.5;
+      }
+      .wrap {
+        max-width: var(--max-width);
+        margin: 32px auto;
+        padding: 0 20px;
+      }
+
+      /* Header */
+      header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 14px 0;
+      }
+      .brand {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+      }
+      .logo {
+        width: 44px;
+        height: 44px;
+        border-radius: 10px;
+        background: linear-gradient(135deg, #7c3aed, #06b6d4);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+      }
+      nav ul {
+        display: flex;
+        gap: 18px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      nav a {
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 600;
+      }
+      nav a:hover {
+        color: var(--accent);
+      }
+
+      /* Hero */
+      .hero {
+        background: linear-gradient(
+          180deg,
+          rgba(37, 99, 235, 0.06),
+          transparent
+        );
+        padding: 36px;
+        border-radius: 16px;
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 24px;
+      }
+      .hero h1 {
+        margin: 0;
+        font-size: 28px;
+      }
+      .hero p {
+        color: var(--muted);
+        margin-top: 8px;
+      }
+      .cta {
+        display: inline-block;
+        margin-top: 16px;
+        background: var(--accent);
+        color: white;
+        padding: 10px 16px;
+        border-radius: 10px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      /* Cards */
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 22px;
+      }
+      .card {
+        background: var(--card);
+        border-radius: 12px;
+        padding: 18px;
+        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
+      }
+      .card h3 {
+        margin: 0 0 8px 0;
+      }
+      .card p {
+        color: var(--muted);
+        margin: 0;
+      }
+
+      /* Main layout */
+      .main-grid {
+        display: grid;
+        grid-template-columns: 1fr 320px;
+        gap: 22px;
+        margin-top: 26px;
+      }
+      .article {
+        background: var(--card);
+        padding: 18px;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+      }
+      .article h2 {
+        margin-top: 0;
+      }
+      .article p {
+        color: var(--muted);
+      }
+      .article .meta {
+        font-size: 13px;
+        color: var(--muted);
+        margin-bottom: 12px;
+      }
+
+      /* Sidebar */
+      .sidebar .widget {
+        background: var(--card);
+        padding: 14px;
+        border-radius: 10px;
+        margin-bottom: 14px;
+      }
+      .small-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .small-list li {
+        padding: 8px 0;
+        border-bottom: 1px solid #eef2ff;
+        color: var(--muted);
+      }
+
+      /* Footer */
+      footer {
+        margin-top: 28px;
+        text-align: center;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      /* Responsive */
+      @media (max-width: 900px) {
+        .hero {
+          grid-template-columns: 1fr;
+        }
+        .main-grid {
+          grid-template-columns: 1fr;
+        }
+        .cards {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @media (max-width: 560px) {
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        nav ul {
+          display: none;
+        }
+        .wrap {
+          margin: 18px auto;
+          padding: 0 14px;
+        }
+      }
+
+      /* small helpers */
+      .muted {
+        color: var(--muted);
+      }
+      .badge {
+        display: inline-block;
+        background: #eef2ff;
+        padding: 6px 10px;
+        border-radius: 999px;
+        font-size: 13px;
+        color: var(--accent);
+        font-weight: 600;
+      }
+      button {
+        padding-top: 5px;
+        border: 2px black solid;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div class="brand">
+          <div class="logo">L</div>
+          <div>
+            <div style="font-weight: 700">Lorem Site</div>
+            <div style="font-size: 12px; color: var(--muted)">
+              basit HTML + CSS şablonu
+            </div>
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#">Anasayfa</a></li>
+            <li><a href="#">Hakkında</a></li>
+            <li><a href="#">Yazılar</a></li>
+            <li><a href="#">İletişim</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section class="hero">
+        <div>
+          <h1>Lorem ipsum dolor sit amet</h1>
+          <p>
+            Bu, temel HTML ve CSS kullanılarak hazırlanmış demo bir web sitesi
+            şemasıdır. İçerik lorem ipsum örnekleriyle doldurulmuştur.
+          </p>
+          <a class="cta" href="#">Hemen Başla</a>
+
+          <div class="cards">
+            <div class="card">
+              <h3>Kalın Başlık</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                nec odio.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Hızlı</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                nec odio.
+              </p>
+            </div>
+            <div class="card">
+              <h3>Güvenli</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+                nec odio.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <aside>
+          <div
+            style="
+              background: linear-gradient(180deg, #eef2ff, #ffffff);
+              padding: 18px;
+              border-radius: 12px;
+              box-shadow: 0 6px 18px rgba(15, 23, 42, 0.04);
+            "
+          >
+            <div style="font-weight: 700">Hızlı Bilgi</div>
+            <p class="muted" style="margin-top: 8px">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
+            <div style="margin-top: 12px">
+              <span class="badge">Öne Çıkan</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <div class="main-grid">
+        <main>
+          <article class="article">
+            <div class="meta">21 Kasım 2025 • Yazar: Demo</div>
+            <h2>Lorem ipsum dolor sit amet, consectetur adipiscing</h2>
+            <p class="muted">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam.
+            </p>
+
+            <h3>Başlık Altı</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras ac
+              ligula mi. Nullam at sapien nec lacus aliquet volutpat. Integer
+              tincidunt, nisl sit amet faucibus gravida, nisi velit facilisis
+              libero, vitae consequat lorem lorem eget urna.
+            </p>
+
+            <h3>Diğer Bölüm</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent
+              luctus, justo a posuere facilisis, purus arcu cursus lorem, sit
+              amet dictum ipsum eros eget nunc.
+            </p>
+          </article>
+
+          <article class="article" style="margin-top: 16px">
+            <h2>İkinci Yazı</h2>
+            <p class="muted">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute
+              irure dolor in reprehenderit.
+            </p>
+          </article>
+        </main>
+
+        <aside class="sidebar">
+          <div class="widget">
+            <strong>Popüler Yazılar</strong>
+            <ul class="small-list" style="margin-top: 8px">
+              <li>Lorem ipsum dolor sit amet</li>
+              <li>Consectetur adipiscing elit</li>
+              <li>Integer nec odio</li>
+            </ul>
+          </div>
+
+          <div class="widget">
+            <strong>Abone Ol</strong>
+            <p style="margin: 8px 0" class="muted">
+              E-posta adresinizi bırakın, yeni içerikler geldiğinde haberdar
+              edelim.
+            </p>
+            <form
+              onsubmit="event.preventDefault();alert('Abone oldunuz - demo');"
+            >
+              <input
+                placeholder="email@ornek.com"
+                style="
+                  width: 100%;
+                  padding: 10px;
+                  border-radius: 8px;
+                  border: 1px solid #e6eefc;
+                "
+              />
+              <button
+                style="
+                  margin-top: 8px;
+                  width: 100%;
+                  padding: 10px;
+                  border-radius: 8px;
+                  border: 0;
+                  background: var(--accent);
+                  color: white;
+                  font-weight: 700;
+                "
+              >
+                Gönder
+              </button>
+            </form>
+          </div>
+        </aside>
+      </div>
+
+      <footer>© 2025 Lorem Site • Basit şablon - demo içerik</footer>
+    </div>
+
+    <div
+      id="cookie"
+      style="
+        position: fixed;
+        bottom: 5px;
+        right: 5px;
+        width: 300px;
+        border: 3px solid #73ad21;
+        border-radius: 20px;
+        padding: 5px;
+        color: #fff;
+        background: #111827;
+      "
+    >
+      <p>We use cookie do accept</p>
+      <button class="cookie-yes" onclick="accepted()">Yes</button>
+      <button class="cookie-no" onclick="notAccepted()">No</button>
+    </div>
+  </body>
+
+  <script>
+    let dc = document.getElementById("cookie");
+    let id = cookie.getAttribute("id");
+
+    if (document.cookie !== "") {
+      dc.style.visibility = "hidden";
+    }
+
+    function accepted() {
+      dc.style.visibility = "hidden";
+      document.cookie = `exampleCookie=${id}`;
+      alert("Cookie has been set!");
+      console.log(document.cookie);
+    }
+
+    function notAccepted() {
+      dc.style.visibility = "hidden";
+    }
+  </script>
+</html>
